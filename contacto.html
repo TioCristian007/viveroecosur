@@ -16,7 +16,7 @@
 <!-- ─── Nav ─────────────────────────────────────────── -->
 <nav class="nav" role="navigation" aria-label="Navegación principal">
   <a class="nav-logo" href="index.html" aria-label="Vivero EcoSur — Inicio">
-    <img src="assets/img/logo.png" alt="Vivero EcoSur">
+    <img src="assets/img/logo.jpg" alt="Vivero EcoSur">
   </a>
   <ul class="nav-links" role="list">
     <li><a href="index.html">Inicio</a></li>
@@ -134,13 +134,14 @@
         <h3>Escríbenos</h3>
         <p>Responderemos a la brevedad. Para urgencias, WhatsApp es más rápido.</p>
 
-        <!-- Reemplaza YOUR_FORM_ID con tu ID de Formspree -->
+        <!-- Web3Forms: reemplaza YOUR_ACCESS_KEY con tu clave de web3forms.com -->
         <form
           id="contact-form"
-          action="https://formspree.io/f/YOUR_FORM_ID"
-          method="POST"
           novalidate
         >
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+          <input type="hidden" name="subject" value="Nuevo mensaje desde viveroecosur.cl">
+          <input type="hidden" name="from_name" value="Vivero EcoSur Web">
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre</label>
@@ -237,7 +238,7 @@
   <div class="footer-grid">
     <div>
       <div class="footer-logo">
-        <img src="assets/img/logo.png" alt="Vivero EcoSur">
+        <img src="assets/img/logo.jpg" alt="Vivero EcoSur">
       </div>
       <p class="footer-tagline">
         Vivero familiar especializado en frutales adaptados al sur de Chile.<br>
