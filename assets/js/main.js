@@ -49,20 +49,27 @@ document.addEventListener("DOMContentLoaded", () => {
       btn.disabled = true;
       btn.textContent = "Enviando…";
 
+      const data = Object.fromEntries(new FormData(form));
+
       try {
-        const res = await fetch(form.action, {
+        const res = await fetch("https://api.web3forms.com/submit", {
           method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json"
+          },
+          body: JSON.stringify(data)
         });
 
-        if (res.ok) {
+        const json = await res.json();
+
+        if (json.success) {
           form.style.display = "none";
           document.getElementById("form-success").style.display = "block";
         } else {
           btn.disabled = false;
           btn.textContent = "Enviar mensaje";
-          alert("Hubo un error al enviar. Intenta de nuevo o escríbenos directamente.");
+          alert("Hubo un error al enviar. Intenta de nuevo o escríbenos por WhatsApp.");
         }
       } catch {
         btn.disabled = false;
