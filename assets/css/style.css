@@ -2,14 +2,14 @@
 
 /* ─── Variables ─────────────────────────────────────── */
 :root {
-  --verde:        #2A4A36;
-  --verde-medio:  #3D6B50;
-  --verde-claro:  #8BAF78;
+  --verde:        #4C7F70;
+  --verde-medio:  #5D9485;
+  --verde-claro:  #8DBFB3;
   --crema:        #F5EFE0;
   --crema-oscura: #EDE5D0;
   --dorado:       #B8963E;
-  --texto:        #1C2B22;
-  --texto-suave:  #4A6355;
+  --texto:        #1A2E28;
+  --texto-suave:  #3D6459;
   --blanco:       #FFFFFF;
   --sombra:       rgba(26, 43, 34, 0.12);
 
