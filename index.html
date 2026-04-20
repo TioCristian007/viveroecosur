@@ -4,113 +4,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vivero EcoSur — Frutales para el Sur de Chile</title>
-  <meta name="description" content="Vivero familiar especializado en frutales adaptados al sur de Chile. Ubicado en Purranque, Décima Región. Variedades típicas de la zona con asesoría profesional.">
-  <meta name="theme-color" content="#2A4A36">
+  <meta name="description" content="Vivero familiar especializado en frutales adaptados al sur de Chile. Purranque, Décima Región de Los Lagos.">
+  <meta name="theme-color" content="#4C7F70">
   <link rel="canonical" href="https://viveroecosur.cl/">
-  <!-- Open Graph -->
-  <meta property="og:title" content="Vivero EcoSur — Frutales para el Sur">
-  <meta property="og:description" content="Vivero familiar con más de 40 variedades de frutales adaptadas al clima del sur de Chile. Purranque, Región de Los Lagos.">
-  <meta property="og:image" content="https://viveroecosur.cl/wp-content/uploads/2020/11/banner.jpg">
-  <meta property="og:url" content="https://viveroecosur.cl/">
-  <meta property="og:type" content="website">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
 
-<!-- ─── Nav ─────────────────────────────────────────── -->
-<nav class="nav" role="navigation" aria-label="Navegación principal">
-  <a class="nav-logo" href="index.html" aria-label="Vivero EcoSur — Inicio">
-    <img src="assets/img/logo.png" alt="Vivero EcoSur">
-  </a>
-  <ul class="nav-links" role="list">
+<nav class="nav">
+  <a class="nav-logo" href="index.html"><img src="assets/img/logo.png" alt="Vivero EcoSur"></a>
+  <ul class="nav-links">
     <li><a href="index.html" class="active">Inicio</a></li>
     <li><a href="frutales.html">Catálogo</a></li>
     <li><a href="contacto.html">Contacto</a></li>
     <li><a href="contacto.html" class="cta-nav">Visítanos</a></li>
   </ul>
-  <button class="nav-toggle" aria-label="Menú" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- ─── Hero ─────────────────────────────────────────── -->
-<section class="hero" aria-label="Bienvenida">
-  <div class="hero-bg"></div>
+<section class="hero">
+  <div class="hero-slider" id="heroSlider">
+    <div class="hero-slide" style="background-image:url('assets/img/hero-invernadero.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/hero-lago.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/img/about-lago-nenufares.jpg')"></div>
+  </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Purranque · Región de Los Lagos</p>
     <h1>Vivero <em>EcoSur</em></h1>
     <p class="hero-tagline">Frutales para el Sur de Chile</p>
-    <p class="hero-desc">
-      Vivero familiar con más de 40 variedades producidas en el propio terreno, 
-      adaptadas al suelo y clima del sur. Asesoría directa de Ingeniero Agrónomo.
-    </p>
+    <p class="hero-desc">Vivero Ecosur está ubicado en un lugar privilegiado en la décima región de Los Lagos, nos destacamos por vender una amplia variedad de Frutales adaptados para el sur de Chile. También ofrecemos plantas ornamentales.</p>
     <div class="hero-ctas">
       <a href="frutales.html" class="btn btn-primary">Ver catálogo</a>
       <a href="contacto.html" class="btn btn-outline">Cómo llegar</a>
     </div>
   </div>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-index="0"></button>
+    <button class="hero-dot" data-index="1"></button>
+  </div>
 </section>
 
-<!-- ─── Features ─────────────────────────────────────── -->
-<div class="features" role="list" aria-label="Características principales">
-  <div class="feature fade-up" role="listitem">
+<div class="features">
+  <div class="feature fade-up">
     <div class="feature-icon">
       <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2C6 2 3 7 3 12c0 3 1.5 5.5 3 7h12c1.5-1.5 3-4 3-7 0-5-3-10-9-10z"/>
         <line x1="12" y1="22" x2="12" y2="12"/>
       </svg>
     </div>
-    <h3>Producción propia</h3>
-    <p>Todos los árboles son producidos en el vivero, sin intermediarios. Garantizamos origen, sanidad y adaptación a la zona.</p>
+    <h3>Variedades Típicas</h3>
+    <p>Disponemos de variedades típicas de los huertos frutales antiguos de nuestra región, difíciles de encontrar en viveros comerciales.</p>
   </div>
-  <div class="feature fade-up" role="listitem" style="transition-delay:0.15s">
+  <div class="feature fade-up" style="transition-delay:.15s">
     <div class="feature-icon">
       <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="10"/>
-        <path d="M12 8v4l3 3"/>
+        <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
       </svg>
     </div>
-    <h3>Variedades típicas</h3>
-    <p>Conservamos y propagamos variedades tradicionales del sur, difíciles de encontrar en viveros comerciales.</p>
-  </div>
-  <div class="feature fade-up" role="listitem" style="transition-delay:0.3s">
-    <div class="feature-icon">
-      <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 20h9"/>
-        <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
-      </svg>
-    </div>
-    <h3>Asesoría de agrónomo</h3>
-    <p>Atención directa de Ingeniero Agrónomo UACH especialista en frutales del sur, manejo de plagas e injertos.</p>
+    <h3>Asesoría de Agrónomo</h3>
+    <p>El vivero es atendido por Verena Heufemann Grob, Ingeniero Agrónomo UACH, con Mención en Producción y Sanidad Vegetal, especializada en Fruticultura.</p>
   </div>
 </div>
 
-<!-- ─── About ─────────────────────────────────────────── -->
-<section class="section about" aria-label="Sobre el vivero">
+<section class="section about">
   <div class="about-img fade-up">
-    <img
-      src="assets/img/about-casita.jpg"
-      alt="Entrada del Vivero EcoSur, Purranque"
-      loading="lazy"
-    >
+    <img src="assets/img/about-casita.jpg" alt="Vivero EcoSur, Purranque" loading="lazy">
   </div>
   <div class="about-text">
     <p class="section-label fade-up">Quiénes somos</p>
     <h2 class="section-title fade-up">Un vivero familiar <em>con raíces</em> en el sur</h2>
-    <p class="section-desc fade-up">
-      Vivero EcoSur se ubica cerca de Purranque, en un entorno privilegiado de la Décima Región de Los Lagos. 
-      Somos un vivero familiar especializado en la producción de frutales adaptados a las condiciones 
-      de suelo y clima del sur de Chile.
-    </p>
-    <p class="section-desc fade-up" style="margin-top:1rem; transition-delay: 0.1s">
-      Nuestra especialización incluye el control de plagas y enfermedades en frutales, 
-      realización de injertos y podas. Conservamos variedades típicas de la zona que son 
-      difíciles de encontrar en otros viveros.
-    </p>
-    <div class="about-verena fade-up" style="transition-delay: 0.2s">
+    <p class="section-desc fade-up">Vivero Ecosur se ubica cerca de Purranque en la décima región de Los Lagos, en un entorno privilegiado. Somos un vivero familiar, enfocado en la venta de Frutales para huertos caseros y producciones familiares. Nuestros Frutales están adaptados a las condiciones de suelo y clima del sur de Chile.</p>
+    <p class="section-desc fade-up" style="margin-top:1rem;transition-delay:.1s">Nuestra especialización incluye el control de plagas y enfermedades en frutales, mantención de huertos caseros, realización de injertos y podas.</p>
+    <div class="about-verena fade-up" style="transition-delay:.2s">
       <div class="about-verena-dot">V</div>
       <div>
         <strong>Verena Heufemann G.</strong>
@@ -120,53 +88,38 @@
   </div>
 </section>
 
-<!-- ─── CTA ───────────────────────────────────────────── -->
-<section class="cta-banner" aria-label="Ver catálogo de productos">
-  <p class="section-label fade-up">Más de 40 variedades</p>
-  <h2 class="section-title fade-up">Cerezas, manzanos, berries<br><em>y mucho más</em></h2>
-  <p class="section-desc fade-up">
-    Desde variedades clásicas del sur hasta especies nativas y ornamentales. 
-    Encuentra el frutal ideal para tu terreno.
-  </p>
-  <div class="fade-up" style="transition-delay:0.15s">
+<section class="cta-banner">
+  <p class="section-label fade-up">Frutales, especies nativas y ornamentales</p>
+  <h2 class="section-title fade-up">Encuentra el frutal ideal<br><em>para tu terreno</em></h2>
+  <div class="fade-up" style="transition-delay:.15s">
     <a href="frutales.html" class="btn btn-verde">Ver catálogo completo</a>
   </div>
 </section>
 
-<!-- ─── Footer ────────────────────────────────────────── -->
-<footer role="contentinfo">
+<footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo">
-        <img src="assets/img/logo.png" alt="Vivero EcoSur">
-      </div>
-      <p class="footer-tagline">
-        Vivero familiar especializado en frutales adaptados al sur de Chile.<br>
-        Purranque, Región de Los Lagos.
-      </p>
+      <div class="footer-logo"><img src="assets/img/logo.png" alt="Vivero EcoSur"></div>
+      <p class="footer-tagline">Vivero familiar especializado en frutales adaptados al sur de Chile. Purranque, Región de Los Lagos.</p>
     </div>
     <div class="footer-col">
       <h4>Navegación</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="frutales.html">Catálogo de Frutales</a></li>
+        <li><a href="frutales.html">Catálogo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="https://www.instagram.com/viveroecosur/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.instagram.com/viveroecosur/" target="_blank" rel="noopener">@viveroecosur</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contacto</h4>
       <div class="footer-contact-item">
         <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6A19.79 19.79 0 012.12 4.18 2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        <a href="tel:+56999703 0152">+56 9 9703 0152</a>
+        <a href="tel:+56999703152">+56 9 9703 0152</a>
       </div>
       <div class="footer-contact-item">
         <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         <a href="mailto:info@viveroecosur.cl">info@viveroecosur.cl</a>
-      </div>
-      <div class="footer-contact-item">
-        <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Km 12, Purranque hacia Coihueco. Seguir letreros «vivero».</span>
       </div>
     </div>
   </div>

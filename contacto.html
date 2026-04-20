@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto — Vivero EcoSur</title>
-  <meta name="description" content="Visítanos en Purranque, km 12 hacia Coihueco. Atención Mayo–Septiembre. Teléfono: +56 9 9703 0152. Escríbenos por email o WhatsApp.">
-  <meta name="theme-color" content="#2A4A36">
+  <meta name="description" content="Visítanos en Purranque, km 12 hacia Coihueco. Atención lunes a sábado 10 a 17 hrs. Teléfono: +56 9 9703 0152.">
+  <meta name="theme-color" content="#4C7F70">
   <link rel="canonical" href="https://viveroecosur.cl/contacto">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,7 +34,7 @@
   <p class="section-label">Purranque · Región de Los Lagos</p>
   <h1 class="section-title">Visítanos o<br><em>contáctanos</em></h1>
   <p class="section-desc" style="margin-top:0.75rem">
-    Estamos disponibles para asesorarte antes de que vengas al vivero.
+    Estamos disponibles para ayudarte y asesorarte.
   </p>
 </header>
 
@@ -47,8 +47,7 @@
       <p class="section-label">Información directa</p>
       <h2 class="section-title">Hablemos <em>antes de plantar</em></h2>
       <p class="section-desc">
-        Verena te puede orientar directamente sobre qué variedades se adaptan mejor 
-        a tu terreno, suelo y necesidades. No dudes en escribir o llamar.
+        No dudes en escribir o llamar, te ayudaremos a resolver tus preguntas.
       </p>
 
       <div class="info-item" style="margin-top:2rem">
@@ -85,17 +84,16 @@
         </div>
         <div>
           <h4>Ubicación</h4>
-          <p>Km 12 desde Purranque hacia Coihueco–Central Rupanco.<br>Seguir letreros «vivero» en los cruces.</p>
+          <p>Km 12 desde Purranque hacia Coihueco–Central Rupanco.<br>Seguir letreros «Vivero Ecosur» que están puestos en los cruces.</p>
         </div>
       </div>
 
       <div class="info-item">
         <div class="info-icon">
           <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
           </svg>
         </div>
         <div>
@@ -118,12 +116,11 @@
         Escribir por WhatsApp
       </a>
 
-      <!-- Horario -->
       <div class="contacto-horario">
         <h4>Horario de atención</h4>
         <p>
-          Atendemos todos los días de <strong>Mayo a Septiembre</strong>.<br>
-          Se sugiere avisar previamente por WhatsApp para asegurar la atención.
+          Atendemos de <strong>lunes a sábado de 10:00 a 17:00 hrs.</strong><br>
+          Se sugiere avisar previamente antes de visitarnos por WhatsApp para asegurar la atención.
         </p>
       </div>
     </div>
@@ -132,50 +129,27 @@
     <div class="fade-up" style="transition-delay:0.15s">
       <div class="form-card">
         <h3>Escríbenos</h3>
-        <p>Responderemos a la brevedad. Para urgencias, WhatsApp es más rápido.</p>
+        <p>Responderemos lo antes posible. También nos puedes escribir por WhatsApp, es más rápido.</p>
 
-        <!-- Web3Forms: reemplaza YOUR_ACCESS_KEY con tu clave de web3forms.com -->
-        <form
-          id="contact-form"
-          novalidate
-        >
+        <form id="contact-form" novalidate>
           <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
           <input type="hidden" name="subject" value="Nuevo mensaje desde viveroecosur.cl">
           <input type="hidden" name="from_name" value="Vivero EcoSur Web">
+
           <div class="form-row">
             <div class="form-group">
               <label for="nombre">Nombre</label>
-              <input
-                id="nombre"
-                name="nombre"
-                type="text"
-                placeholder="Tu nombre"
-                required
-                autocomplete="given-name"
-              >
+              <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required autocomplete="given-name">
             </div>
             <div class="form-group">
               <label for="telefono">Teléfono (opcional)</label>
-              <input
-                id="telefono"
-                name="telefono"
-                type="tel"
-                placeholder="+56 9 …"
-                autocomplete="tel"
-              >
+              <input id="telefono" name="telefono" type="tel" placeholder="+56 9 …" autocomplete="tel">
             </div>
           </div>
 
           <div class="form-group">
             <label for="email">Correo electrónico</label>
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="tu@correo.cl"
-              required
-              autocomplete="email"
-            >
+            <input id="email" name="email" type="email" placeholder="tu@correo.cl" required autocomplete="email">
           </div>
 
           <div class="form-group">
@@ -192,15 +166,9 @@
 
           <div class="form-group">
             <label for="mensaje">Mensaje</label>
-            <textarea
-              id="mensaje"
-              name="mensaje"
-              placeholder="Cuéntanos tu consulta, qué tipo de terreno tienes, qué quieres plantar…"
-              required
-            ></textarea>
+            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos tu consulta, qué tipo de terreno tienes, qué quieres plantar…" required></textarea>
           </div>
 
-          <!-- Honeypot anti-spam -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
           <button type="submit" class="btn btn-verde" style="width:100%;justify-content:center">
@@ -208,7 +176,6 @@
           </button>
         </form>
 
-        <!-- Éxito -->
         <div id="form-success" class="form-success">
           <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
@@ -227,10 +194,23 @@
 <div class="mapa-section" aria-label="Ubicación en mapa">
   <iframe
     title="Ubicación Vivero EcoSur — Purranque"
-    src="https://www.openstreetmap.org/export/embed.html?bbox=-73.0,-40.95,-72.7,-40.75&layer=mapnik&marker=-40.83,-72.88"
+    src="https://www.google.com/maps?q=Vivero+EcoSur+Purranque&hl=es&z=13&output=embed"
     loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
     allowfullscreen
   ></iframe>
+  <a
+    class="mapa-cta"
+    href="https://www.google.com/maps/dir/?api=1&destination=Vivero+EcoSur+Purranque"
+    target="_blank"
+    rel="noopener"
+  >
+    <svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+      <circle cx="12" cy="10" r="3"/>
+    </svg>
+    Cómo llegar
+  </a>
 </div>
 
 <!-- ─── Footer ────────────────────────────────────────── -->
@@ -249,9 +229,9 @@
       <h4>Navegación</h4>
       <ul>
         <li><a href="index.html">Inicio</a></li>
-        <li><a href="frutales.html">Catálogo de Frutales</a></li>
+        <li><a href="frutales.html">Catálogo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="https://www.instagram.com/viveroecosur/" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.instagram.com/viveroecosur/" target="_blank" rel="noopener">@viveroecosur</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -266,7 +246,7 @@
       </div>
       <div class="footer-contact-item">
         <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <span>Km 12, Purranque hacia Coihueco. Seguir letreros «vivero».</span>
+        <span>Km 12, Purranque hacia Coihueco. Seguir letreros «Vivero Ecosur».</span>
       </div>
     </div>
   </div>

@@ -1,145 +1,154 @@
-// ─── Producto data ─────────────────────────────────────
+// ─── PRODUCTOS ────────────────────────────────────────────────
+// Todas las imágenes viven en assets/img/, sin dependencias externas.
+
+const I = 'assets/img/';
+
 const PRODUCTOS = [
-  // Cerezas y Guindas
-  { id:1,  nombre:"Cereza Blanca",             categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/cereza-blanca.jpg",       desc:"Variedad de pulpa clara y sabor suave, muy apreciada en fresco. Excelente adaptación al clima húmedo del sur, con cosecha en diciembre-enero." },
-  { id:2,  nombre:"Cereza Kordia",             categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/kordia.jpg",              desc:"Cereza tardía de fruto firme y color rojo intenso. Alta resistencia al rajado por lluvia, perfecta para las condiciones del sur. Cosecha en enero." },
-  { id:3,  nombre:"Cereza Lambert",            categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/cereza-lambert.jpg",      desc:"Variedad clásica de gran tamaño y color oscuro profundo. Muy apreciada en el mercado local con buena producción en suelos de Los Lagos." },
-  { id:4,  nombre:"Cereza Lapins",             categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/lapins.png",             desc:"Autofértil: no necesita polinizador. Fruto grande, dulce y de maduración tardía. Especialmente recomendada para huertos pequeños o familiares." },
-  { id:5,  nombre:"Cereza Regina",             categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/cereza-regina.jpg",      desc:"Variedad premium de maduración muy tardía. Fruto firme, muy dulce y con escasa caída. Ideal para consumo fresco y venta directa." },
-  { id:6,  nombre:"Cerezo de Flor Doble",      categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/cerezo-flor.jpg",       desc:"Ornamental de gran valor estético. Florece abundantemente en primavera con flores dobles rosas o blancas. Excelente opción para jardines del sur." },
-  { id:7,  nombre:"Corazón de Paloma",         categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/cereza-corazon-paloma.jpg", desc:"Variedad tradicional de forma característica, pulpa tierna y sabor dulce. Bien adaptada al clima y suelos del sur de Chile." },
-  { id:8,  nombre:"Guinda Ácida Roja",         categoria:"cerezas",  cat_label:"Cerezas y Guindas",              img:"https://viveroecosur.cl/wp-content/uploads/2017/03/guinda-acida.jpg",      desc:"Sabor ácido intenso, ideal para conservas, mermeladas y jugos artesanales. Árbol rústico y muy productivo en climas fríos y húmedos." },
-  // Manzanos
-  { id:9,  nombre:"Manzana Cabeza de Niño",    categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/manzana-nino.jpg",      desc:"Variedad local de gran tamaño y sabor dulce. Muy típica del sur, excelente para consumo fresco, jugo natural y elaboración de chicha." },
-  { id:10, nombre:"Manzana del Paraíso",       categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/manzanos-b.jpg",       desc:"Portainjerto enano utilizado como pie para otros manzanos. Permite obtener árboles de menor porte con producción más precoz y manejable." },
-  { id:11, nombre:"Manzana Fierro",            categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/manzana-fierro.jpg",   desc:"Variedad tradicional chilena de larga conservación post cosecha. Fruto firme, sabor equilibrado. Muy rústica y perfectamente adaptada al sur." },
-  { id:12, nombre:"Manzana Gravenstein",       categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/GRAVENSTEIN.jpg",     desc:"Una de las variedades más antiguas y apreciadas. Cosecha temprana con sabor aromático intenso. Excelente para jugo fresco y consumo directo." },
-  { id:13, nombre:"Manzana Limona",            categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/LIMONA.png",          desc:"Fruto amarillo-verdoso de sabor suave y ligeramente ácido. Variedad tradicional del sur, muy usada en sidra artesanal y consumo familiar." },
-  { id:14, nombre:"Manzana Plátano",           categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/manzana-platano.png", desc:"Fruto alargado y amarillo característico. Sabor dulce y maduración tardía. Muy resistente y de alta productividad en condiciones del sur." },
-  { id:15, nombre:"Manzana Reineta",           categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/manzana-reineta-1-copia-1.jpg", desc:"Variedad europea de excelente calidad y sabor complejo. Aromática e ideal para repostería. Se adapta muy bien a la Región de Los Lagos." },
-  { id:16, nombre:"Manzano Braeburn",          categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/Braeburn.png",        desc:"Origen neozelandés, fruto bicolor rojo-amarillo. Sabor dulce-ácido muy equilibrado con excelente conservación en post cosecha." },
-  { id:17, nombre:"Manzano Jonagold",          categoria:"manzanos", cat_label:"Manzanos",                       img:"https://viveroecosur.cl/wp-content/uploads/2017/03/Jonagold.png",       desc:"Híbrido de Golden y Jonathan. Fruto grande de color amarillo-anaranjado con sabor excepcional. Alta productividad en el sur." },
-  // Ciruelas, Duraznos y Damascos
-  { id:18, nombre:"Ciruela Angelina",          categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2017/03/ciruela-angelino.png", desc:"Fruto grande de color rojo intenso y pulpa amarilla dulce y firme. Maduración tardía, bien adaptada a las condiciones del sur." },
-  { id:19, nombre:"Ciruela D'Agen",            categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2017/03/ciruela-dagen.jpg",  desc:"Variedad francesa clásica para secado. Pulpa azul-negra, muy dulce y productiva. La base de la tradicional ciruela pasa artesanal." },
-  { id:20, nombre:"Ciruela Dagen",             categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2020/11/ciruela-dagen.jpg", desc:"Adaptación local de excelente desempeño. Ideal para mermeladas, conservas caseras y consumo fresco. Muy productiva en el sur." },
-  { id:21, nombre:"Durazno Beterraga",         categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2020/10/durazno-beterraga.jpg", desc:"Fruto de pulpa roja llamativa y sabor dulce intenso. Muy decorativo y diferenciador. Poco común, agrega valor real a cualquier huerto." },
-  { id:22, nombre:"Durazno Carson",            categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2020/10/durazno-Carson.jpg", desc:"Variedad de media estación con fruto grande y jugoso. Muy productivo en el sur con manejo adecuado. Sabor equilibrado y atractivo." },
-  { id:23, nombre:"Durazno Plátano",           categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2020/11/durazno-platano.jpg", desc:"Fruto alargado y característico con pulpa blanca de sabor suave y dulce. Variedad tradicional muy apreciada en el sur de Chile." },
-  { id:24, nombre:"Damasco",                   categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2020/10/Damasco.jpg",        desc:"Albaricoque adaptado al clima sureño. Fruto aromático, ideal para consumo fresco, mermeladas artesanales y deshidratado." },
-  { id:25, nombre:"Pera Packard",              categoria:"ciruelas", cat_label:"Ciruelas y Duraznos",             img:"https://viveroecosur.cl/wp-content/uploads/2017/03/pera-packard.jpg",  desc:"Variedad de origen americano de fruto grande y jugoso. Excelente calidad de pera con buena adaptación a los suelos del sur." },
-  // Berries
-  { id:26, nombre:"Arándanos",                 categoria:"berries",  cat_label:"Berries",                         img:"https://viveroecosur.cl/wp-content/uploads/2017/03/arandano.jpg",       desc:"Multivariedad. Fruto antioxidante de alta demanda y valor nutricional. Se adapta perfectamente a los suelos ácidos del sur. Cosecha en verano." },
-  { id:27, nombre:"Frambuesas",                categoria:"berries",  cat_label:"Berries",                         img:"https://viveroecosur.cl/wp-content/uploads/2017/03/frambuesa.jpg",      desc:"Fruto delicado y aromático. Ideal para consumo fresco, mermeladas y repostería. Muy productivo en el clima templado-húmedo del sur." },
-  { id:28, nombre:"Frutillas",                 categoria:"berries",  cat_label:"Berries",                         img:"https://viveroecosur.cl/wp-content/uploads/2017/03/frutillas.jpg",      desc:"Variedad seleccionada para el sur. Fruto dulce y aromático con producción abundante durante toda la primavera y verano." },
-  { id:29, nombre:"Grosellas",                 categoria:"berries",  cat_label:"Berries",                         img:"https://viveroecosur.cl/wp-content/uploads/2020/11/grosellas.jpg",     desc:"Arbusto rústico de bayas ácidas y nutritivas. Excelente para mermeladas y jugos. Alta tolerancia al frío y humedad del sur." },
-  { id:30, nombre:"Maqui",                     categoria:"berries",  cat_label:"Berries",                         img:"https://viveroecosur.cl/wp-content/uploads/2017/03/maqui.jpg",         desc:"Especie nativa chilena con frutos morados ricos en antioxidantes. Rústico y de bajo manejo. Gran valor nutricional y cultural para el sur." },
-  { id:31, nombre:"Zarzaparrilla",             categoria:"berries",  cat_label:"Berries",                         img:"https://viveroecosur.cl/wp-content/uploads/2020/11/zarzaparrilla.jpg", desc:"Arbusto nativo de bayas negras con propiedades medicinales reconocidas. Muy resistente y fácil de cultivar en el sur de Chile." },
-  // Frutos Secos
-  { id:32, nombre:"Almendro",                  categoria:"secos",    cat_label:"Frutos Secos",                    img:"https://viveroecosur.cl/wp-content/uploads/2020/10/almendro.jpg",       desc:"Árbol de floración temprana y fruto seco de alto valor. Requiere buen drenaje. Variedades seleccionadas para adaptarse al sur." },
-  { id:33, nombre:"Avellano Europeo",          categoria:"secos",    cat_label:"Frutos Secos",                    img:"https://viveroecosur.cl/wp-content/uploads/2020/10/avellano-europeo.jpg", desc:"Arbusto productivo de fruto seco muy apreciado. Se adapta bien al clima frío-húmedo de la Décima Región. Alta demanda local." },
-  { id:34, nombre:"Nogal",                     categoria:"secos",    cat_label:"Frutos Secos",                    img:"https://viveroecosur.cl/wp-content/uploads/2020/11/nogal-500x325.jpg", desc:"Árbol de larga vida y gran producción. Nuez de excelente calidad y alta demanda en el mercado local. Perfectamente adaptado al sur." },
-  // Cítricos
-  { id:35, nombre:"Limones",                   categoria:"citricos", cat_label:"Cítricos",                        img:"https://viveroecosur.cl/wp-content/uploads/2020/11/Limones.jpg",        desc:"Variedades adaptadas a microclimas del sur. Requieren ubicación protegida de heladas. Producción continua con buen manejo estacional." },
-  { id:36, nombre:"Mandarinas",                categoria:"citricos", cat_label:"Cítricos",                        img:"https://viveroecosur.cl/wp-content/uploads/2020/11/mandarinos.jpg",     desc:"Variedades seleccionadas para climas templados. Fruto dulce y fácil de pelar. Ideal para huertos familiares en zonas protegidas del sur." },
-  { id:37, nombre:"Naranjos",                  categoria:"citricos", cat_label:"Cítricos",                        img:"https://viveroecosur.cl/wp-content/uploads/2020/11/naranjos.jpg",      desc:"Adaptable a zonas con microclima favorable en el sur. Requiere protección de heladas. Excelente calidad de fruto cuando tiene el manejo adecuado." },
-  // Otros
-  { id:38, nombre:"Kiwi",                      categoria:"otros",    cat_label:"Ornamentales y Otros",            img:"https://viveroecosur.cl/wp-content/uploads/2020/11/kiwi.jpg",          desc:"Enredadera vigorosa de fruto exótico y nutritivo. Requiere tutor y polinizador macho. Muy productiva en el clima húmedo del sur." },
-  { id:39, nombre:"Olivo",                     categoria:"otros",    cat_label:"Ornamentales y Otros",            img:"https://viveroecosur.cl/wp-content/uploads/2020/11/olivo.jpg",         desc:"Árbol mediterráneo de larga vida. Variedades seleccionadas para climas del sur. Para producción de aceitunas y aceite artesanal." },
-  { id:40, nombre:"Membrillo Lúcuma",          categoria:"otros",    cat_label:"Ornamentales y Otros",            img:"https://viveroecosur.cl/wp-content/uploads/2017/03/membrillo.jpg",     desc:"Fruto aromático de sabor intenso, ideal para dulces y mermeladas artesanales. Árbol rústico, resistente y de bajo manejo." },
-  { id:41, nombre:"Sauco",                     categoria:"otros",    cat_label:"Ornamentales y Otros",            img:"https://viveroecosur.cl/wp-content/uploads/2017/03/sauco.jpg",         desc:"Arbusto nativo de múltiples usos: flores y frutos comestibles con propiedades medicinales. Muy rústico y de rápido crecimiento." },
-  { id:42, nombre:"Helechos",                  categoria:"otros",    cat_label:"Ornamentales y Otros",            img:"https://viveroecosur.cl/wp-content/uploads/2020/11/helechos.jpg",      desc:"Plantas ornamentales ideales para zonas húmedas y sombreadas. Aportan textura y verde durante todo el año en jardines del sur." },
-  { id:43, nombre:"Lirios de Agua y Nenúfares",categoria:"otros",    cat_label:"Ornamentales y Otros",            img:"https://viveroecosur.cl/wp-content/uploads/2020/11/Lirios-de-agua-y-nenufares-flor-de-loto-500x667.jpg", desc:"Plantas acuáticas ornamentales de gran belleza. Ideales para estanques y jardines con agua. Floración llamativa en primavera-verano." },
+
+  // ── 1. Cerezas ────────────────────────────────────────────
+  { nombre:'Cereza Blanca',            cat:'cerezas',      img: I+'cereza-blanca.jpg' },
+  { nombre:'Cereza Kordia',            cat:'cerezas',      img: I+'cereza-kordia.jpg' },
+  { nombre:'Cereza Lambert',           cat:'cerezas',      img: I+'cereza-lambert.jpg' },
+  { nombre:'Cereza Lapins',            cat:'cerezas',      img: I+'cereza-lapins.jpg' },
+  { nombre:'Cereza Regina',            cat:'cerezas',      img: I+'cereza-regina.jpg' },
+  { nombre:'Cereza Reiner',            cat:'cerezas',      img: I+'cereza-reiner.jpg' },
+  { nombre:'Corazón de Paloma',        cat:'cerezas',      img: I+'cereza-corazon-paloma.jpg' },
+  { nombre:'Guinda Ácida Roja',        cat:'cerezas',      img: I+'guinda-acida.jpg' },
+
+  // ── 2. Manzanos, Perales, Membrillos, Higuera ──────────────
+  { nombre:'Manzana Cabeza de Niño',   cat:'manzanos',     img: I+'manzana-cabeza-nino.jpg' },
+  { nombre:'Manzana del Paraíso',      cat:'manzanos',     img: I+'manzana-paraiso.jpg' },
+  { nombre:'Manzana Fierro',           cat:'manzanos',     img: I+'manzana-fierro.jpg' },
+  { nombre:'Manzana Gravenstein',      cat:'manzanos',     img: I+'manzana-gravenstein.jpg' },
+  { nombre:'Manzana Limona',           cat:'manzanos',     img: I+'manzana-limona.jpg' },
+  { nombre:'Manzana Plátano',          cat:'manzanos',     img: I+'manzana-platano.jpg' },
+  { nombre:'Manzana Reineta',          cat:'manzanos',     img: I+'manzana-reineta.jpg' },
+  { nombre:'Manzano Jonagold',         cat:'manzanos',     img: I+'manzana-jonagold.jpg' },
+  { nombre:'Peral Packams',            cat:'manzanos',     img: I+'pera-packams.jpg' },
+  { nombre:'Peral Asiático',           cat:'manzanos',     img: I+'pera-asiatica.jpg' },
+  { nombre:'Peral Winter Nelli',       cat:'manzanos',     img: I+'pera-winter-nelli.jpg' },
+  { nombre:'Membrillo Lúcuma',         cat:'manzanos',     img: I+'membrillo.jpg' },
+  { nombre:'Higuera',                  cat:'manzanos',     img: I+'higuera.jpg' },
+  { nombre:'Parra',                    cat:'manzanos',     img: I+'parra.jpg' },
+
+  // ── 3. Ciruelos y Duraznos ────────────────────────────────
+  { nombre:'Ciruela Angelina',         cat:'ciruelas',     img: I+'ciruela-angelina.jpg' },
+  { nombre:"Ciruela D'Agen",           cat:'ciruelas',     img: I+'ciruela-dagen.jpg' },
+  { nombre:'Ciruelo Santa Rosa',       cat:'ciruelas',     img: I+'ciruela-santa-rosa.jpg' },
+  { nombre:'Ciruelo Reina Claudia',    cat:'ciruelas',     img: I+'ciruela-reina-claudia.jpg' },
+  { nombre:'Durazno Beterraga',        cat:'ciruelas',     img: I+'durazno-beterraga.jpg' },
+  { nombre:'Durazno Carson',           cat:'ciruelas',     img: I+'durazno-carson.jpg' },
+  { nombre:'Durazno Plátano',          cat:'ciruelas',     img: I+'durazno-platano.jpg' },
+  { nombre:'Damasco',                  cat:'ciruelas',     img: I+'damasco.jpg' },
+
+  // ── 4. Frutales Menores ───────────────────────────────────
+  { nombre:'Arándanos',                cat:'berries',      img: I+'arandanos.jpg' },
+  { nombre:'Frambuesas',               cat:'berries',      img: I+'frambuesas.jpg' },
+  { nombre:'Frutillas',                cat:'berries',      img: I+'frutillas.jpg' },
+  { nombre:'Grosellas',                cat:'berries',      img: I+'grosellas.jpg' },
+  { nombre:'Zarzaparrilla',            cat:'berries',      img: I+'zarzaparrilla.jpg' },
+  { nombre:'Murta',                    cat:'berries',      img: I+'murta.jpg' },
+  { nombre:'Ruibarbo',                 cat:'berries',      img: I+'ruibarbo.jpg' },
+
+  // ── 5. Frutos Secos ───────────────────────────────────────
+  { nombre:'Nogal',                    cat:'secos',        img: I+'nogal.jpg' },
+  { nombre:'Nogal Chandler',           cat:'secos',        img: I+'nogal-chandler.jpg' },
+  { nombre:'Castaño Marrón',           cat:'secos',        img: I+'castano-marron.jpg' },
+  { nombre:'Avellano Europeo',         cat:'secos',        img: I+'avellano-europeo.jpg' },
+
+  // ── 6. Frutales de Flor ───────────────────────────────────
+  { nombre:'Cerezo de Flor Doble',     cat:'flor',         img: I+'cerezo-flor-doble.jpg' },
+  { nombre:'Cerezo de Flor',           cat:'flor',         img: I+'cerezo-flor.jpg' },
+  { nombre:'Manzano de Flor',          cat:'flor',         img: I+'manzano-flor.jpg' },
+  { nombre:'Almendro',                 cat:'flor',         img: I+'almendro.jpg' },
+
+  // ── 7. Plantas Acuáticas ──────────────────────────────────
+  { nombre:'Lirio de Agua',            cat:'acuaticas',    img: I+'lirio-agua.jpg' },
+  { nombre:'Flor de Loto',             cat:'acuaticas',    img: I+'flor-loto.jpg' },
+
+  // ── 8. Cítricos ───────────────────────────────────────────
+  { nombre:'Limones',                  cat:'citricos',     img: I+'limones.jpg' },
+  { nombre:'Limón Variegado',          cat:'citricos',     img: I+'limon-variegado.jpg' },
+  { nombre:'Limequat',                 cat:'citricos',     img: I+'limequat.jpg' },
+  { nombre:'Kumquat',                  cat:'citricos',     img: I+'kumquat.jpg' },
+  { nombre:'Pomelo',                   cat:'citricos',     img: I+'pomelo.jpg' },
+
+  // ── 9. Ornamentales ───────────────────────────────────────
+  { nombre:'Azaleas',                  cat:'ornamentales', img: I+'azalea.jpg' },
+  { nombre:'Rododendros',              cat:'ornamentales', img: I+'rododendro.jpg' },
+  { nombre:'Camelias',                 cat:'ornamentales', img: I+'camelia.jpg' },
+  { nombre:'Erikas',                   cat:'ornamentales', img: I+'erika.jpg' },
+  { nombre:'Lavandas',                 cat:'ornamentales', img: I+'lavanda.jpg' },
+  { nombre:'Pitosporum',               cat:'ornamentales', img: I+'pitosporum.jpg' },
+  { nombre:'Helechos Paragua',         cat:'ornamentales', img: I+'helecho-paragua.jpg' },
+  { nombre:'Kiwi',                     cat:'ornamentales', img: I+'kiwi.jpg' },
+  { nombre:'Olivo',                    cat:'ornamentales', img: I+'olivo.jpg' },
+  { nombre:'Sauco',                    cat:'ornamentales', img: I+'sauco.jpg' },
+
+  // ── 10. Nativos ───────────────────────────────────────────
+  { nombre:'Coihue',                   cat:'nativos',      img: I+'coihue.jpg' },
+  { nombre:'Raulí',                    cat:'nativos',      img: I+'rauli.jpg' },
+  { nombre:'Roble',                    cat:'nativos',      img: I+'roble.jpg' },
+  { nombre:'Ulmo',                     cat:'nativos',      img: I+'ulmo.jpg' },
+  { nombre:'Notro',                    cat:'nativos',      img: I+'notro.jpg' },
+  { nombre:'Arrayán',                  cat:'nativos',      img: I+'arrayan.jpg' },
 ];
 
-// ─── Category config ────────────────────────────────────
+// ─── Categorías ───────────────────────────────────────────
 const CATEGORIAS = [
-  { id:"todos",    label:"Todos"                  },
-  { id:"cerezas",  label:"Cerezas y Guindas"      },
-  { id:"manzanos", label:"Manzanos"               },
-  { id:"ciruelas", label:"Ciruelas y Duraznos"    },
-  { id:"berries",  label:"Berries"                },
-  { id:"secos",    label:"Frutos Secos"           },
-  { id:"citricos", label:"Cítricos"               },
-  { id:"otros",    label:"Ornamentales y Otros"   },
+  { id:'todos',        label:'Todos' },
+  { id:'cerezas',      label:'Cerezas' },
+  { id:'manzanos',     label:'Manzanos, Perales y Membrillos' },
+  { id:'ciruelas',     label:'Ciruelos y Duraznos' },
+  { id:'berries',      label:'Frutales Menores' },
+  { id:'secos',        label:'Frutos Secos' },
+  { id:'flor',         label:'Frutales de Flor' },
+  { id:'acuaticas',    label:'Plantas Acuáticas' },
+  { id:'citricos',     label:'Cítricos' },
+  { id:'ornamentales', label:'Ornamentales' },
+  { id:'nativos',      label:'Nativos' },
 ];
 
-// ─── State ──────────────────────────────────────────────
-let catActiva = "todos";
-let busqueda   = "";
+let catActiva = 'todos', busqueda = '';
 
-// ─── Render ─────────────────────────────────────────────
 function renderTabs() {
-  const container = document.getElementById("category-tabs");
-  if (!container) return;
-  container.innerHTML = CATEGORIAS.map(c => `
-    <button
-      class="tab-btn${c.id === catActiva ? " active" : ""}"
-      data-cat="${c.id}"
-      aria-pressed="${c.id === catActiva}"
-    >${c.label}</button>
-  `).join("");
-
-  container.querySelectorAll(".tab-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      catActiva = btn.dataset.cat;
-      renderTabs();
-      renderProductos();
-    });
-  });
+  const c = document.getElementById('category-tabs');
+  if (!c) return;
+  c.innerHTML = CATEGORIAS.map(cat =>
+    `<button class="tab-btn${cat.id===catActiva?' active':''}" data-cat="${cat.id}">${cat.label}</button>`
+  ).join('');
+  c.querySelectorAll('.tab-btn').forEach(btn =>
+    btn.addEventListener('click', () => { catActiva = btn.dataset.cat; renderTabs(); renderProductos(); })
+  );
 }
 
 function renderProductos() {
-  const grid = document.getElementById("products-grid");
+  const grid = document.getElementById('products-grid');
   if (!grid) return;
-
   const q = busqueda.toLowerCase().trim();
-
-  const filtrados = PRODUCTOS.filter(p => {
-    const matchCat = catActiva === "todos" || p.categoria === catActiva;
-    const matchQ   = !q || p.nombre.toLowerCase().includes(q) || p.desc.toLowerCase().includes(q);
-    return matchCat && matchQ;
-  });
-
-  if (filtrados.length === 0) {
-    grid.innerHTML = `
-      <div class="no-results">
-        <p>No se encontraron productos para "<strong>${busqueda || catActiva}</strong>".</p>
-      </div>`;
+  const lista = PRODUCTOS.filter(p =>
+    (catActiva==='todos' || p.cat===catActiva) &&
+    (!q || p.nombre.toLowerCase().includes(q))
+  );
+  if (!lista.length) {
+    grid.innerHTML = '<div class="no-results"><p>No se encontraron productos.</p></div>';
     return;
   }
-
-  grid.innerHTML = filtrados.map((p, i) => `
-    <article class="product-card" style="transition-delay:${(i % 12) * 40}ms">
+  grid.innerHTML = lista.map((p,i) => `
+    <article class="product-card" style="transition-delay:${(i%12)*35}ms">
       <div class="product-card-img">
-        <img src="${p.img}" alt="${p.nombre}" loading="lazy" onerror="this.style.opacity='0'">
-        <span class="product-card-cat">${p.cat_label}</span>
+        <img src="${p.img}" alt="${p.nombre}" loading="lazy" onerror="this.parentElement.style.background='var(--crema-oscura)'">
       </div>
-      <div class="product-card-body">
-        <h3>${p.nombre}</h3>
-        <p>${p.desc}</p>
-      </div>
+      <div class="product-card-body"><h3>${p.nombre}</h3></div>
     </article>
-  `).join("");
-
-  // stagger animation
-  requestAnimationFrame(() => {
-    grid.querySelectorAll(".product-card").forEach((card, i) => {
-      setTimeout(() => card.classList.add("visible"), i * 40);
-    });
-  });
+  `).join('');
+  requestAnimationFrame(() =>
+    grid.querySelectorAll('.product-card').forEach((c,i) => setTimeout(()=>c.classList.add('visible'), i*35))
+  );
 }
 
-// ─── Init ────────────────────────────────────────────────
-document.addEventListener("DOMContentLoaded", () => {
-  renderTabs();
-  renderProductos();
-
-  const searchInput = document.getElementById("search-input");
-  if (searchInput) {
-    searchInput.addEventListener("input", e => {
-      busqueda = e.target.value;
-      renderProductos();
-    });
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  renderTabs(); renderProductos();
+  const s = document.getElementById('search-input');
+  if (s) s.addEventListener('input', e => { busqueda = e.target.value; renderProductos(); });
 });
