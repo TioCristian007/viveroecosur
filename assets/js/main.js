@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     start();
 
     dots.forEach(d => d.addEventListener('click', () => { stop(); goTo(+d.dataset.index); start(); }));
-    const pauseTarget = slider.parentElement || hero;
+    const pauseTarget = document.querySelector('.hero') || slider.parentElement;
     if (pauseTarget) {
       pauseTarget.addEventListener('mouseenter', stop);
       pauseTarget.addEventListener('mouseleave', start);

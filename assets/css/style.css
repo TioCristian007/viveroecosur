@@ -52,95 +52,68 @@ ul   { list-style: none; }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--blanco); border-radius: 2px; transition: var(--t); }
 
-/* ─── Hero ───────────────────────────────────────────── */
-/* ─── Hero Split Layout ────────────────────────────────── */
-.hero-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 92vh;
-  background: var(--crema);
-  padding-top: 72px; /* offset por nav fija */
-}
-
-.hero-split-text {
+/* ─── Hero full-screen con slider ───────────────────────── */
+.hero {
   position: relative;
-  padding: 4rem 5% 3rem;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-image: url('../img/about-lago-nenufares.jpg');
-  background-size: cover;
-  background-position: center;
+  align-items: center;
   overflow: hidden;
 }
-/* Degradado suave: crema opaco abajo-izquierda donde está el texto, transparente arriba-derecha */
-.hero-split-text::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(115deg,
-    rgba(245,239,224,0.88) 0%,
-    rgba(245,239,224,0.70) 35%,
-    rgba(245,239,224,0.35) 70%,
-    rgba(245,239,224,0.10) 100%);
-  z-index: 1;
-}
-.hero-split-text > * {
-  position: relative;
-  z-index: 2;
-}
 
-.hero-split-slider {
-  position: relative;
-  overflow: hidden;
-  min-height: 500px;
-}
-
-/* Slider */
+/* Slider como fondo completo */
 .hero-slider {
   position: absolute; inset: 0;
   display: flex;
   transition: transform 0.9s cubic-bezier(0.77,0,0.18,1);
   will-change: transform;
+  z-index: 0;
 }
 .hero-slide {
   min-width: 100%; height: 100%;
   background-size: cover; background-position: center;
   transform: scale(1.04);
   transition: transform 7s ease;
+  flex-shrink: 0;
 }
 .hero-slide.active { transform: scale(1); }
+
+/* Overlay oscuro sobre las fotos */
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20,40,30,0.72) 0%,
+    rgba(20,40,30,0.45) 60%,
+    rgba(20,40,30,0.30) 100%
+  );
+  z-index: 1;
+}
+
+/* Contenido sobre el overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 9rem 8% 6rem;
+  max-width: 720px;
+}
 
 /* Typography */
 .hero-eyebrow {
   font-size: 0.78rem; font-weight: 500; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--verde);
+  text-transform: uppercase; color: rgba(255,255,255,0.75);
   margin-bottom: 1.75rem;
 }
 .hero-logo {
   width: auto;
-  max-width: min(480px, 100%);
+  max-width: min(460px, 90%);
   height: auto;
   margin-bottom: 1.75rem;
-  filter: drop-shadow(0 2px 8px rgba(76,127,112,0.18));
-}
-.hero-split h1 {
-  font-family: var(--f-display);
-  font-size: clamp(3.5rem, 7vw, 6rem);
-  font-weight: 300; line-height: 1;
-  color: var(--verde);
-  margin-bottom: 0.3rem;
-}
-.hero-split h1 em { font-style: italic; color: var(--verde-medio); }
-.hero-tagline {
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem); font-weight: 400;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--texto-suave);
-  margin-bottom: 1.75rem;
+  filter: brightness(0) invert(1) drop-shadow(0 2px 12px rgba(0,0,0,0.35));
 }
 .hero-desc {
-  font-size: 1rem; font-weight: 300;
-  color: var(--texto);
+  font-size: 1.05rem; font-weight: 300;
+  color: rgba(255,255,255,0.88);
   max-width: 480px;
   margin-bottom: 2.5rem;
   line-height: 1.75;
@@ -149,29 +122,18 @@ ul   { list-style: none; }
 
 /* Dots */
 .hero-dots {
-  position: absolute; bottom: 1.5rem; left: 50%;
+  position: absolute; bottom: 2rem; left: 50%;
   transform: translateX(-50%);
   display: flex; gap: 0.55rem; z-index: 3;
 }
 .hero-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  border: none; background: rgba(255,255,255,0.55);
+  border: none; background: rgba(255,255,255,0.45);
   cursor: pointer; padding: 0;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
   transition: background var(--t), transform var(--t);
 }
 .hero-dot.active { background: var(--blanco); transform: scale(1.35); }
-
-/* Variante de botón outline oscuro (sobre fondo claro) */
-.btn-outline-dark {
-  background: transparent;
-  color: var(--verde);
-  border: 1.5px solid var(--verde);
-}
-.btn-outline-dark:hover {
-  background: var(--verde);
-  color: var(--blanco);
-}
 
 /* ─── Buttons ─────────────────────────────────────────── */
 .btn {
@@ -371,22 +333,7 @@ footer { background: var(--texto); color: rgba(245,239,224,.7); padding: 3.5rem 
   .section { padding: 4rem 5%; }
   .page-header { padding: 8rem 5% 3rem; }
 }
-/* ─── Hero split responsive ──────────────────────────── */
-@media (max-width: 900px) {
-  .hero-split {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-  .hero-split-text {
-    padding: 3rem 5%;
-    order: 2;
-  }
-  .hero-split-slider {
-    order: 1;
-    height: 55vh;
-    min-height: 360px;
-  }
-}
+
 
 /* ─── Amuleto sneaky (solo para la dueña) ───────────── */
 /* Se esconde al final de la página — hay que hacer scroll hasta el fondo */
