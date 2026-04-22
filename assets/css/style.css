@@ -31,9 +31,11 @@ ul   { list-style: none; }
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 5%; height: 72px;
-  transition: background var(--t), box-shadow var(--t);
+  background: var(--verde);
+  box-shadow: 0 2px 20px var(--sombra);
+  transition: box-shadow var(--t);
 }
-.nav.scrolled { background: var(--verde); box-shadow: 0 2px 20px var(--sombra); }
+.nav.scrolled { box-shadow: 0 4px 22px rgba(0,0,0,0.18); }
 .nav-logo img { height: 44px; width: auto; filter: brightness(0) invert(1); }
 .nav-links { display: flex; gap: 2.5rem; align-items: center; }
 .nav-links a {
@@ -51,11 +53,47 @@ ul   { list-style: none; }
 .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--blanco); border-radius: 2px; transition: var(--t); }
 
 /* ─── Hero ───────────────────────────────────────────── */
-.hero {
+/* ─── Hero Split Layout ────────────────────────────────── */
+.hero-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 92vh;
+  background: var(--crema);
+  padding-top: 72px; /* offset por nav fija */
+}
+
+.hero-split-text {
   position: relative;
-  height: 100svh; min-height: 600px;
-  display: flex; align-items: center;
+  padding: 4rem 5% 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('../img/about-lago-nenufares.jpg');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
+}
+/* Degradado suave: crema opaco abajo-izquierda donde está el texto, transparente arriba-derecha */
+.hero-split-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg,
+    rgba(245,239,224,0.88) 0%,
+    rgba(245,239,224,0.70) 35%,
+    rgba(245,239,224,0.35) 70%,
+    rgba(245,239,224,0.10) 100%);
+  z-index: 1;
+}
+.hero-split-text > * {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-split-slider {
+  position: relative;
+  overflow: hidden;
+  min-height: 500px;
 }
 
 /* Slider */
@@ -68,62 +106,72 @@ ul   { list-style: none; }
 .hero-slide {
   min-width: 100%; height: 100%;
   background-size: cover; background-position: center;
-  transform: scale(1.06);
+  transform: scale(1.04);
   transition: transform 7s ease;
 }
 .hero-slide.active { transform: scale(1); }
 
-/* Overlay sobre el slider */
-.hero-overlay {
-  position: absolute; inset: 0; z-index: 1;
-  background: linear-gradient(135deg, rgba(20,40,30,0.80) 0%, rgba(40,70,55,0.55) 60%, rgba(20,40,30,0.35) 100%);
-}
-
-/* Contenido */
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 720px; padding: 0 5%;
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.9s ease 0.3s, transform 0.9s ease 0.3s;
-}
-.hero.loaded .hero-content { opacity: 1; transform: none; }
-
+/* Typography */
 .hero-eyebrow {
   font-size: 0.78rem; font-weight: 500; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--verde-claro); margin-bottom: 1rem;
+  text-transform: uppercase; color: var(--verde);
+  margin-bottom: 1.75rem;
 }
-.hero h1 {
+.hero-logo {
+  width: auto;
+  max-width: min(480px, 100%);
+  height: auto;
+  margin-bottom: 1.75rem;
+  filter: drop-shadow(0 2px 8px rgba(76,127,112,0.18));
+}
+.hero-split h1 {
   font-family: var(--f-display);
-  font-size: clamp(4rem, 9vw, 7.5rem);
-  font-weight: 300; line-height: 1.05;
-  color: var(--blanco); margin-bottom: 0.5rem;
+  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-weight: 300; line-height: 1;
+  color: var(--verde);
+  margin-bottom: 0.3rem;
 }
-.hero h1 em { font-style: italic; color: var(--verde-claro); }
+.hero-split h1 em { font-style: italic; color: var(--verde-medio); }
 .hero-tagline {
-  font-size: clamp(0.9rem, 2vw, 1.1rem); font-weight: 300;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem); font-weight: 400;
   letter-spacing: 0.18em; text-transform: uppercase;
-  color: rgba(245,239,224,0.75); margin-bottom: 1.5rem;
+  color: var(--texto-suave);
+  margin-bottom: 1.75rem;
 }
 .hero-desc {
-  font-size: 1.05rem; font-weight: 300;
-  color: rgba(245,239,224,0.88); max-width: 480px;
-  margin-bottom: 2.5rem; line-height: 1.75;
+  font-size: 1rem; font-weight: 300;
+  color: var(--texto);
+  max-width: 480px;
+  margin-bottom: 2.5rem;
+  line-height: 1.75;
 }
 .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* Dots */
 .hero-dots {
-  position: absolute; bottom: 2rem; left: 50%;
+  position: absolute; bottom: 1.5rem; left: 50%;
   transform: translateX(-50%);
-  display: flex; gap: 0.6rem; z-index: 3;
+  display: flex; gap: 0.55rem; z-index: 3;
 }
 .hero-dot {
   width: 8px; height: 8px; border-radius: 50%;
-  border: none; background: rgba(255,255,255,0.35);
+  border: none; background: rgba(255,255,255,0.55);
   cursor: pointer; padding: 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
   transition: background var(--t), transform var(--t);
 }
 .hero-dot.active { background: var(--blanco); transform: scale(1.35); }
+
+/* Variante de botón outline oscuro (sobre fondo claro) */
+.btn-outline-dark {
+  background: transparent;
+  color: var(--verde);
+  border: 1.5px solid var(--verde);
+}
+.btn-outline-dark:hover {
+  background: var(--verde);
+  color: var(--blanco);
+}
 
 /* ─── Buttons ─────────────────────────────────────────── */
 .btn {
@@ -322,4 +370,46 @@ footer { background: var(--texto); color: rgba(245,239,224,.7); padding: 3.5rem 
   .hero h1 { font-size: 3rem; }
   .section { padding: 4rem 5%; }
   .page-header { padding: 8rem 5% 3rem; }
+}
+/* ─── Hero split responsive ──────────────────────────── */
+@media (max-width: 900px) {
+  .hero-split {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-split-text {
+    padding: 3rem 5%;
+    order: 2;
+  }
+  .hero-split-slider {
+    order: 1;
+    height: 55vh;
+    min-height: 360px;
+  }
+}
+
+/* ─── Amuleto sneaky (solo para la dueña) ───────────── */
+/* Se esconde al final de la página — hay que hacer scroll hasta el fondo */
+.amuleto {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.7);
+  z-index: 5;
+  opacity: 0.55;
+  transition: opacity var(--t);
+}
+.amuleto:hover { opacity: 0.95; }
+.amuleto img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Contexto de posicionamiento: el footer */
+footer { position: relative; }
+
+@media (max-width: 600px) {
+  .amuleto { width: 26px; height: 26px; bottom: 10px; right: 10px; }
 }

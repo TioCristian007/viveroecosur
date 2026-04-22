@@ -3,14 +3,10 @@ const I = 'assets/img/';
 
 const PRODUCTOS = [
   // ── 1. Cerezas ────────────────────────────────────────────
-  { nombre:'Cereza Blanca',         cat:'cerezas',    img:I+'cereza-blanca.jpg',
-    desc:'Variedad de pulpa clara y sabor suave, muy apreciada en fresco. Excelente adaptación al clima húmedo del sur, con cosecha en diciembre-enero.' },
   { nombre:'Cereza Kordia',         cat:'cerezas',    img:I+'cereza-kordia.jpg',
     desc:'Cereza tardía de fruto firme y color rojo intenso. Perfecta para las condiciones del sur. Cosecha en enero.' },
-  { nombre:'Cereza Lambert',        cat:'cerezas',    img:I+'cereza-lambert.jpg',
-    desc:'Variedad clásica de gran tamaño y color oscuro profundo. Muy apreciada en el mercado local con buena producción en suelos de Los Lagos.' },
   { nombre:'Cereza Lapins',         cat:'cerezas',    img:I+'cereza-lapins.jpg',
-    desc:'Autofértil: no necesita polinizador. Fruto grande, dulce y de maduración tardía. Especialmente recomendada para huertos pequeños o familiares.' },
+    desc:'Fruto grande, dulce y de maduración tardía. Especialmente recomendada para huertos pequeños o familiares.' },
   { nombre:'Cereza Regina',         cat:'cerezas',    img:I+'cereza-regina.jpg',
     desc:'Variedad premium de maduración muy tardía. Fruto firme, muy dulce y con escasa caída. Ideal para consumo fresco y venta directa.' },
   { nombre:'Cereza Reiner',         cat:'cerezas',    img:I+'cereza-reiner.jpg',
@@ -24,21 +20,21 @@ const PRODUCTOS = [
   { nombre:'Manzana Cabeza de Niño', cat:'manzanos', img:I+'manzana-cabeza-nino.jpg',
     desc:'Variedad local de gran tamaño y sabor dulce. Muy típica del sur, excelente para consumo fresco, jugo natural y elaboración de chicha.' },
   { nombre:'Manzana del Paraíso',   cat:'manzanos',   img:I+'manzana-paraiso.jpg',
-    desc:'Portainjerto enano utilizado como pie para otros manzanos. Permite obtener árboles de menor porte con producción más precoz y manejable.' },
+    desc:'Variedad de manzano que da una manzanita pequeña, ideal para hacer conservas. Su floración es de color rosado.' },
   { nombre:'Manzana Fierro',        cat:'manzanos',   img:I+'manzana-fierro.jpg',
     desc:'Variedad tradicional chilena de larga conservación post cosecha. Fruto firme, sabor equilibrado. Muy rústica y perfectamente adaptada al sur.' },
   { nombre:'Manzana Gravenstein',   cat:'manzanos',   img:I+'manzana-gravenstein.jpg',
     desc:'Una de las variedades más antiguas y apreciadas. Cosecha temprana con sabor aromático intenso. Excelente para jugo fresco y consumo directo.' },
   { nombre:'Manzana Limona',        cat:'manzanos',   img:I+'manzana-limona.jpg',
-    desc:'Fruto amarillo-verdoso de sabor suave y ligeramente ácido. Variedad tradicional del sur, muy usada en sidra artesanal y consumo familiar.' },
+    desc:'Fruto amarillo-verdoso de sabor suave y ligeramente ácido. Variedad tradicional del sur, muy usada en chicha artesanal y consumo familiar.' },
   { nombre:'Manzana Plátano',       cat:'manzanos',   img:I+'manzana-platano.jpg',
     desc:'Fruto alargado y amarillo característico. Sabor dulce y maduración tardía. Muy resistente y de alta productividad en condiciones del sur.' },
   { nombre:'Manzana Reineta',       cat:'manzanos',   img:I+'manzana-reineta.jpg',
-    desc:'Variedad europea de excelente calidad y sabor complejo. Aromática e ideal para repostería. Se adapta muy bien a la Región de Los Lagos.' },
+    desc:'Clásica manzana de guarda. Es de color verde, con una forma achatada característica, aromática e ideal para repostería.' },
   { nombre:'Manzano Jonagold',      cat:'manzanos',   img:I+'manzana-jonagold.jpg',
-    desc:'Híbrido de Golden y Jonathan. Fruto grande de color amarillo-anaranjado con sabor excepcional. Alta productividad en el sur.' },
+    desc:'Fruto grande de color rojo-anaranjado con sabor excepcional. Alta productividad en el sur. Es una variedad tardía, la manzana es firme y resistente.' },
   { nombre:'Peral Packams',         cat:'manzanos',   img:I+'pera-packams.jpg',
-    desc:'Pera de cosecha tardía, fruto jugoso y aromático. Excelente para consumo fresco y conservas. Adaptada a climas templados y fríos.' },
+    desc:'Pera de cosecha tardía, fruto firme y resistente. Excelente para consumo fresco y conservas. Adaptada a climas templados y fríos.' },
   { nombre:'Peral Asiático',        cat:'manzanos',   img:I+'pera-asiatica.jpg',
     desc:'Fruto crujiente y muy jugoso, con forma redonda. Sabor dulce refrescante. Ideal para consumo en fresco, se come como una manzana.' },
   { nombre:'Peral Winter Nelli',    cat:'manzanos',   img:I+'pera-winter-nelli.jpg',
@@ -66,7 +62,7 @@ const PRODUCTOS = [
   { nombre:'Durazno Plátano',       cat:'ciruelas',   img:I+'durazno-platano.jpg',
     desc:'Fruto alargado y característico con pulpa blanca de sabor suave y dulce. Variedad tradicional muy apreciada en el sur de Chile.' },
   { nombre:'Damasco',               cat:'ciruelas',   img:I+'damasco.jpg',
-    desc:'Albaricoque adaptado al clima sureño. Fruto aromático, ideal para consumo fresco, mermeladas artesanales y deshidratado.' },
+    desc:'Fruto aromático adaptado al clima sureño, ideal para consumo fresco, mermeladas artesanales y deshidratado.' },
 
   // ── 4. Frutales Menores ───────────────────────────────────
   { nombre:'Arándanos',             cat:'berries',    img:I+'arandanos.jpg',
@@ -83,10 +79,10 @@ const PRODUCTOS = [
     desc:'Especie nativa de frutos rojos pequeños, aromáticos y de sabor único. Usada en repostería tradicional y mermeladas artesanales.' },
   { nombre:'Ruibarbo',              cat:'berries',    img:I+'ruibarbo.jpg',
     desc:'Planta perenne con pecíolos comestibles de sabor ácido característico. Tradicional para kuchen, mermeladas y postres del sur.' },
+  { nombre:'Sauco',                 cat:'berries',    img:I+'sauco.jpg',
+    desc:'Arbusto nativo de múltiples usos: flores y frutos comestibles con propiedades medicinales. Muy rústico y de rápido crecimiento.' },
 
   // ── 5. Frutos Secos ───────────────────────────────────────
-  { nombre:'Nogal',                 cat:'secos',      img:I+'nogal.jpg',
-    desc:'Árbol de larga vida y gran producción. Nuez de excelente calidad y alta demanda en el mercado local. Perfectamente adaptado al sur.' },
   { nombre:'Nogal Chandler',        cat:'secos',      img:I+'nogal-chandler.jpg',
     desc:'Variedad moderna de nuez de cáscara clara y pulpa grande. Productividad precoz y alta. Una de las más demandadas comercialmente.' },
   { nombre:'Castaño Marrón',        cat:'secos',      img:I+'castano-marron.jpg',
@@ -95,10 +91,8 @@ const PRODUCTOS = [
     desc:'Arbusto productivo de fruto seco muy apreciado. Se adapta bien al clima frío-húmedo de la Décima Región. Alta demanda local.' },
 
   // ── 6. Frutales de Flor ───────────────────────────────────
-  { nombre:'Cerezo de Flor Doble',  cat:'flor',       img:I+'cerezo-flor-doble.jpg',
+  { nombre:'Cerezo de Flor',        cat:'flor',       img:I+'cerezo-flor-doble.jpg',
     desc:'Ornamental de gran valor estético. Florece abundantemente en primavera con flores dobles rosas o blancas. Excelente opción para jardines del sur.' },
-  { nombre:'Cerezo de Flor',        cat:'flor',       img:I+'cerezo-flor.jpg',
-    desc:'Árbol ornamental de floración espectacular. Copa elegante y follaje decorativo. Ideal para dar estructura visual a jardines.' },
   { nombre:'Manzano de Flor',       cat:'flor',       img:I+'manzano-flor.jpg',
     desc:'Variedad ornamental con floración rosada abundante. Frutos pequeños decorativos que persisten en otoño. Muy resistente al clima sureño.' },
   { nombre:'Almendro',              cat:'flor',       img:I+'almendro.jpg',
@@ -116,9 +110,9 @@ const PRODUCTOS = [
   { nombre:'Limón Variegado',       cat:'citricos',   img:I+'limon-variegado.jpg',
     desc:'Variedad ornamental con hojas jaspeadas blanco-verde y frutos rayados. Decorativo y productivo, ideal para patios protegidos.' },
   { nombre:'Limequat',              cat:'citricos',   img:I+'limequat.jpg',
-    desc:'Híbrido entre limón y kumquat. Fruto pequeño, muy ácido y aromático. Árbol compacto, resistente al frío, ideal para macetas.' },
+    desc:'Híbrido entre limón y kumquat. Fruto pequeño, muy ácido y aromático. Debe protegerse de las heladas. Fruto con cáscara delgada.' },
   { nombre:'Kumquat',               cat:'citricos',   img:I+'kumquat.jpg',
-    desc:'Cítrico miniatura de cáscara dulce y pulpa ácida. Se come entero. Árbol ornamental compacto, muy productivo y resistente al frío.' },
+    desc:'Cítrico miniatura de cáscara dulce, delgada y pulpa ácida. Se come entero. Árbol ornamental compacto, muy productivo, ideal para macetas y decorar espacios.' },
   { nombre:'Pomelo',                cat:'citricos',   img:I+'pomelo.jpg',
     desc:'Cítrico de fruto grande y pulpa rosada o amarilla. Sabor entre dulce y amargo característico. Requiere microclima protegido.' },
 
@@ -137,12 +131,6 @@ const PRODUCTOS = [
     desc:'Arbusto ornamental de follaje denso y brillante. Excelente para cercos vivos, setos y estructuras verdes durante todo el año.' },
   { nombre:'Helechos Paragua',      cat:'ornamentales', img:I+'helecho-paragua.jpg',
     desc:'Helecho nativo de gran porte con frondas elegantes en forma de paraguas. Perfecto para zonas sombrías y húmedas del jardín.' },
-  { nombre:'Kiwi',                  cat:'ornamentales', img:I+'kiwi.jpg',
-    desc:'Enredadera vigorosa de fruto exótico y nutritivo. Requiere tutor y polinizador macho. Muy productiva en el clima húmedo del sur.' },
-  { nombre:'Olivo',                 cat:'ornamentales', img:I+'olivo.jpg',
-    desc:'Árbol mediterráneo de larga vida. Variedades seleccionadas para climas del sur. Para producción de aceitunas y aceite artesanal.' },
-  { nombre:'Sauco',                 cat:'ornamentales', img:I+'sauco.jpg',
-    desc:'Arbusto nativo de múltiples usos: flores y frutos comestibles con propiedades medicinales. Muy rústico y de rápido crecimiento.' },
 
   // ── 10. Nativos ───────────────────────────────────────────
   { nombre:'Coihue',                cat:'nativos',    img:I+'coihue.jpg',
@@ -157,6 +145,12 @@ const PRODUCTOS = [
     desc:'Árbol nativo de flores rojas intensas, también llamado ciruelillo. Florece a fines de primavera. Atrae picaflores y abejas.' },
   { nombre:'Arrayán',               cat:'nativos',    img:I+'arrayan.jpg',
     desc:'Árbol nativo de corteza canela característica. Follaje perenne verde oscuro. Símbolo del bosque valdiviano, muy ornamental.' },
+
+  // ── 11. Otras Especies ────────────────────────────────────
+  { nombre:'Kiwi',                  cat:'otras',      img:I+'kiwi.jpg',
+    desc:'Enredadera vigorosa de fruto exótico y nutritivo. Requiere tutor y polinizador macho. Muy productiva en el clima húmedo del sur.' },
+  { nombre:'Olivo',                 cat:'otras',      img:I+'olivo.jpg',
+    desc:'Árbol mediterráneo de larga vida. Variedades seleccionadas para climas del sur. Para producción de aceitunas y aceite artesanal.' },
 ];
 
 const CATEGORIAS = [
@@ -171,6 +165,7 @@ const CATEGORIAS = [
   { id:'citricos',     label:'Cítricos' },
   { id:'ornamentales', label:'Ornamentales' },
   { id:'nativos',      label:'Nativos' },
+  { id:'otras',        label:'Otras Especies' },
 ];
 
 let catActiva = 'todos', busqueda = '';

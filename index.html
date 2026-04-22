@@ -24,28 +24,38 @@
   <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<section class="hero">
-  <div class="hero-slider" id="heroSlider">
-    <div class="hero-slide" style="background-image:url('assets/img/lago-nenufares.jpg')"></div>
-    <div class="hero-slide" style="background-image:url('assets/img/vivero-porton.jpg')"></div>
-  </div>
-  <div class="hero-overlay"></div>  
-  <div class="hero-content">
-    <p class="hero-eyebrow">Purranque · Región de Los Lagos</p>
-    <h1>Vivero <em>EcoSur</em></h1>
-    <p class="hero-tagline">Frutales para el Sur de Chile</p>
-    <p class="hero-desc">Vivero Ecosur está ubicado en un lugar privilegiado en la décima región de Los Lagos, nos destacamos por vender una amplia variedad de Frutales adaptados para el sur de Chile. También ofrecemos plantas ornamentales.</p>
+<!-- ─── Hero con layout de dos columnas ─────────────────── -->
+<section class="hero-split">
+  <div class="hero-split-text">
+    <p class="hero-eyebrow">Purranque · Región Los Lagos · Chile</p>
+    <img class="hero-logo" src="assets/img/logo.png" alt="Vivero EcoSur — Frutales para el Sur">
+    <p class="hero-desc">
+      Vivero Ecosur está ubicado en un lugar privilegiado en la décima región de Los Lagos,
+      nos destacamos por vender una amplia variedad de Frutales, adaptados para el sur de Chile.
+      También ofrecemos plantas ornamentales y nativas.
+    </p>
     <div class="hero-ctas">
-      <a href="frutales.html" class="btn btn-primary">Ver catálogo</a>
-      <a href="contacto.html" class="btn btn-outline">Cómo llegar</a>
+      <a href="frutales.html" class="btn btn-verde">Ver catálogo</a>
+      <a href="contacto.html" class="btn btn-outline-dark">Cómo llegar</a>
     </div>
   </div>
-  <div class="hero-dots" id="heroDots">
-    <button class="hero-dot active" data-index="0"></button>
-    <button class="hero-dot" data-index="1"></button>
+  <div class="hero-split-slider">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide" style="background-image:url('assets/img/main-01-manzana.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/main-02-laguna.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/main-03-limones.jpg')"></div>
+      <div class="hero-slide" style="background-image:url('assets/img/main-04-macetero.jpg')"></div>
+    </div>
+    <div class="hero-dots" id="heroDots">
+      <button class="hero-dot active" data-index="0"></button>
+      <button class="hero-dot" data-index="1"></button>
+      <button class="hero-dot" data-index="2"></button>
+      <button class="hero-dot" data-index="3"></button>
+    </div>
   </div>
 </section>
 
+<!-- Features -->
 <div class="features">
   <div class="feature fade-up">
     <div class="feature-icon">
@@ -55,7 +65,7 @@
       </svg>
     </div>
     <h3>Variedades Típicas</h3>
-    <p>Disponemos de variedades típicas de los huertos frutales antiguos de nuestra región, difíciles de encontrar en viveros comerciales.</p>
+    <p>Disponemos de variedades típicas de los huertos antiguos de frutales de nuestra región.</p>
   </div>
   <div class="feature fade-up" style="transition-delay:.15s">
     <div class="feature-icon">
@@ -68,9 +78,10 @@
   </div>
 </div>
 
+<!-- About - ahora con foto de oficina -->
 <section class="section about">
   <div class="about-img fade-up">
-    <img src="assets/img/about-casita.jpg" alt="Vivero EcoSur, Purranque" loading="lazy">
+    <img src="assets/img/oficina.jpg" alt="Oficina del Vivero EcoSur, Purranque" loading="lazy">
   </div>
   <div class="about-text">
     <p class="section-label fade-up">Quiénes somos</p>
@@ -87,6 +98,7 @@
   </div>
 </section>
 
+<!-- CTA -->
 <section class="cta-banner">
   <p class="section-label fade-up">Frutales, especies nativas y ornamentales</p>
   <h2 class="section-title fade-up">Encuentra el frutal ideal<br><em>para tu terreno</em></h2>
@@ -95,6 +107,7 @@
   </div>
 </section>
 
+<!-- Footer -->
 <footer>
   <div class="footer-grid">
     <div>
@@ -123,8 +136,13 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Vivero EcoSur · Todos los derechos reservados</span>
-    <span class="footer-brand">Diseño y desarrollo por <a href="tuwebatupinta@gmail.com" target="_blank" rel="noopener">tuwebatupinta@gmail.com</a></span>
+    <span>© 2025 Vivero EcoSur · Todos los derechos reservados</span>
+    <span class="footer-brand">Diseño y desarrollo por <a href="https://tuwebatupinta.cl" target="_blank" rel="noopener">tuwebatupinta.cl</a></span>
+  </div>
+
+  <!-- Amuleto sneaky -->
+  <div class="amuleto" aria-hidden="true" title="Amuleto de suerte">
+    <img src="assets/img/amuleto.jpg" alt="">
   </div>
 </footer>
 

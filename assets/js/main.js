@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ── Hero load ───────────────────────────────────────
-  const hero = document.querySelector('.hero');
+  const hero = document.querySelector('.hero-split') || document.querySelector('.hero');
   if (hero) requestAnimationFrame(() => hero.classList.add('loaded'));
 
   // ── Fade-up ─────────────────────────────────────────
@@ -48,8 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     start();
 
     dots.forEach(d => d.addEventListener('click', () => { stop(); goTo(+d.dataset.index); start(); }));
-    hero.addEventListener('mouseenter', stop);
-    hero.addEventListener('mouseleave', start);
+    const pauseTarget = slider.parentElement || hero;
+    if (pauseTarget) {
+      pauseTarget.addEventListener('mouseenter', stop);
+      pauseTarget.addEventListener('mouseleave', start);
+    }
   }
 
   // ── Web3Forms ───────────────────────────────────────
